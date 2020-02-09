@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TailSpin.SpaceGame.Web.Models;
@@ -50,13 +53,32 @@ namespace TailSpin.SpaceGame.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+<<<<<<< HEAD
             app.UseCookiePolicy();
             app.UseRouting();
             app.UseAuthorization();
+||||||| merged common ancestors
+            app.UseCookiePolicy();
+=======
+>>>>>>> c435ecd350b97a590db3ea69e48487f95a34ffa4
 
+<<<<<<< HEAD
             app.UseEndpoints(endpoints =>
              {
                 endpoints.MapControllerRoute(
+||||||| merged common ancestors
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+=======
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+>>>>>>> c435ecd350b97a590db3ea69e48487f95a34ffa4
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
